@@ -30,13 +30,11 @@ public class Button : Control
                 IsAntialias = true
             };
             
-            SKRect textBounds = new SKRect(); textBrush.MeasureText(Text, ref textBounds);
+            SKRect textBounds = new SKRect();
+            
+            textBrush.MeasureText(Text, ref textBounds);
             
             surface.Canvas.DrawText(Text, Bounds.MidX - textBounds.MidX, Bounds.MidY - textBounds.MidY, textBrush);
-        }
-        else
-        {
-            surface.Canvas.Clear();
         }
     }
 }
